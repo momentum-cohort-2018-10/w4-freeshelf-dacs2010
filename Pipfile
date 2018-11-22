@@ -6,11 +6,10 @@ name = "pypi"
 [packages]
 django = "==2.0.8"
 django-extensions = "*"
-"flake8" = "*"
+pylint-django = "*"
 
 [dev-packages]
 "autopep8" = "*"
-"flake8" = "*"
 pylint = "*"
 
 [requires]

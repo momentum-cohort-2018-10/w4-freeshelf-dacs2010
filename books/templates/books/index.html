@@ -5,5 +5,14 @@
 
 {% block content %}
     <h1>Free Books!</h1>
-    <p>feel free to browse the awsome books!</p>
+    <p>feel free to browse the awesome books!</p>
+    {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        <p>{{ book.book_URL }}</p>
+        <p>{{ book.slug }}</p>
+        <p>{{ book.date }}</p>
+    {% endfor %}
 {% endblock content %}
+
