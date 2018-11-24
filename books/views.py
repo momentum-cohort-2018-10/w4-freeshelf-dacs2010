@@ -7,4 +7,7 @@ def index(request):
     '''
     render index.html
     '''
-    return render(request, 'books/index.html')
+    books = Book.objects.all()
+    return render(request, 'books/index.html', {
+        'books': books
+    })
