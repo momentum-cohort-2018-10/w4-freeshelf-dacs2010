@@ -13,7 +13,10 @@
         {% endblock header %}
     </head>
     <body>
-        <h2><a href="http://127.0.0.1:8000/admin/">Admin</a></h2>
+        <header>
+            <h2 class="nav-item"><a href="http://127.0.0.1:8000/admin/">Admin</a></h2>
+            <h2 class="nav-item"><a href="{% url 'home' %}">Home</a></h2>
+        </header>
         {% block content %}
         {% endblock content %}
 

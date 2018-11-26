@@ -4,5 +4,21 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>hello</h1>
+    {% for category in categorys %}
+        <h1>{{ category.subject }} Books</h1>
+        <p>hello, these books are {{ book.category }} and {{ category.subject }}</p>
+        {% for book in books %}
+            {% if category.subject != book.category %}
+                <div class='book-wrapper'>
+                    <h2>
+                        <a href="{{ book.book_URL }}">{{ book.title }}</a>
+                    </h2>
+                    <p>by {{ book.author }}</p>
+                    <p>{{ book.description }}</p>
+                    <p>{{ book.date }}</p>
+                    <p>{{ book.category }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
 {% endblock content %}

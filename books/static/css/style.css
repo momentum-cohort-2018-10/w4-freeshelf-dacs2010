@@ -2,10 +2,30 @@ body {
     background-color: lightcyan;
 }
 
+header {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    background-image: url('https://picsum.photos/1504/130');
+}
+
 h1{
     text-align: center;
+    background-image: url('https://picsum.photos/1500/130');
+    height: 50px;
+    padding: 30px;
 }
+
+.nav-item {
+     margin: 10px;
+ }
 
 .book-wrapper {
     background-color: white;
+    border: 30px solid lightgrey;
+    padding: 25px;
+}
+
+.category-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
 }
