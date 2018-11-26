@@ -6,10 +6,10 @@ urlpatterns = [
     # main page
     path('', views.index, name='home'),
 
-    # testing for book pages
+    # testing for category pages
     path(
-        'books/<slug>/',
-        views.book_detail,
-        name='book_detail'
+        'category/<slug>/',
+        views.category_detail,
+        name='category_detail'
     ),
 ]

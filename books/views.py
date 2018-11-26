@@ -3,6 +3,16 @@ from books.models import Book, Category
 
 
 # Create your views here.
+def category_detail(request, slug):
+    '''
+    category pages
+    '''
+    categorys = Category.objects.all()
+    return render(request, 'categorys/category_detail.html', {
+        'categorys': categorys,
+    })
+
+
 def index(request):
     '''
     render index.html
@@ -12,14 +22,4 @@ def index(request):
     return render(request, 'books/index.html', {
         'books': books,
         'categorys': categorys,
-    })
-
-
-def book_detail(request, slug):
-    '''
-    book details pages
-    '''
-    book = Book.object.get(slug=slug)
-    return render(request, 'books/book_detail.html', {
-        'book': book,
     })

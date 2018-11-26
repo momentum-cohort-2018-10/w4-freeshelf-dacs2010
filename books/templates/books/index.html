@@ -7,7 +7,11 @@
     <h1>Free Books Online!</h1>
     <h2>Some categories to choose from:</h2>
     {% for category in categorys %}
-        <h2>potato</h2>
+        <h2>
+            <a href="{% url 'category_detail' slug=category.slug %}">
+                {{ category.subject }}
+            </a>
+        </h2>
     {% endfor %}
     <h2>Feel free to browse these awesome books:</h2>
     {% for book in books %}
