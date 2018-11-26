@@ -7,16 +7,19 @@ def index(request):
     '''
     render index.html
     '''
+    categorys = Category.objects.all()
     books = Book.objects.all()
     return render(request, 'books/index.html', {
-        'books': books
+        'books': books,
+        'categorys': categorys,
     })
 
-def category_detail(request, slug):
+
+def book_detail(request, slug):
     '''
-    individual pages for each category
+    book details pages
     '''
-    category = Category.objects.get(slug=slug)
-    return render(request, 'things/thing_detil.html', {
-        'category': category,
+    book = Book.object.get(slug=slug)
+    return render(request, 'books/book_detail.html', {
+        'book': book,
     })

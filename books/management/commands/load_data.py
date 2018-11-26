@@ -13,7 +13,7 @@ from django.core.files import File
 
 
 def get_path(file):
-    # look at the base dir and get book_data and a ...file?
+    # look at the base dir and get book_data and the file
     return os.path.join(settings.BASE_DIR, 'books/book_data', file)
 
 
@@ -24,7 +24,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        # method to anything if it's ther already
+        # method to delete anything if it's already there
         print("deleted books")
         Book.objects.all().delete()
 
@@ -35,7 +35,7 @@ class Command(BaseCommand):
 
             # do something with each row
             for row in reader:
-                # make a instance of book? and set each column accordingly
+                # make a instance of book, and set each column accordingly
                 book = Book(
                     title=row['title'],
                     author=row['author'],

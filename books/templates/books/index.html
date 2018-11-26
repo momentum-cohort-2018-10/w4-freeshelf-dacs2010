@@ -4,12 +4,21 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Free Books!</h1>
-    <p>Feel free to browse these awesome books!</p>
+    <h1>Free Books Online!</h1>
+    <h2>Some categories to choose from:</h2>
+    {% for category in categorys %}
+        <h2>potato</h2>
+    {% endfor %}
+    <h2>Feel free to browse these awesome books:</h2>
     {% for book in books %}
-        <h2><a href="{{ book.book_URL }}">{{ book.title }}</a></h2>
-        <p>{{ book.author }}</p>
-        <p>{{ book.description }}</p>
-        <p>{{ book.date }}</p>
+        <div class='book-wrapper'>
+            <h2>
+                <a href="{{ book.book_URL }}">{{ book.title }}</a>
+            </h2>
+            <p>by {{ book.author }}</p>
+            <p>{{ book.description }}</p>
+            <p>{{ book.date }}</p>
+            <p>{{ book.category }}</p>
+        </div>
     {% endfor %}
 {% endblock content %}

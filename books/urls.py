@@ -5,8 +5,11 @@ from books import views
 urlpatterns = [
     # main page
     path('', views.index, name='home'),
-    path('things/<slug>/',
-         views.category_detail,
-         name='category_detail'
+
+    # testing for book pages
+    path(
+        'books/<slug>/',
+        views.book_detail,
+        name='book_detail'
     ),
 ]
