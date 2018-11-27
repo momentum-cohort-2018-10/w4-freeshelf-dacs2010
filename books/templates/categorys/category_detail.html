@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}
+ {% block title %}
     {{ category.subject }} - {{ block.super }}
 {% endblock title %}
-
 {% block content %}
-    {% for category in categorys %}
-        <h1>{{ category.subject }} Books</h1>
-        <p>hello, these books are {{ book.category }} and {{ category.subject }}</p>
-        {% for book in books %}
-            {% if category.subject != book.category %}
-                <div class='book-wrapper'>
-                    <h2>
-                        <a href="{{ book.book_URL }}">{{ book.title }}</a>
-                    </h2>
-                    <p>by {{ book.author }}</p>
-                    <p>{{ book.description }}</p>
-                    <p>{{ book.date }}</p>
-                    <p>{{ book.category }}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
+    <h1>{{ category.subject }} Books</h1>
+    {% for book in books %}
+        <p>hello, these books are {{ book.category.subject }} and {{ category.subject }}</p>
+        {% if category.subject == book.category.subject %}
+            <div class='book-wrapper'>
+                <h2>
+                    <a href="{{ book.book_URL }}">{{ book.title }}</a>
+                </h2>
+                <p>by {{ book.author }}</p>
+                <p>{{ book.description }}</p>
+                <p>{{ book.date }}</p>
+                <p>{{ book.category }}</p>
+            </div>
+        {% endif %}
     {% endfor %}
 {% endblock content %}
+{% comment %} {% block content %}
+<p>{{ categorys }}</p>
+<p>{{ books }}</p>
+{% endblock content %} {% endcomment %}

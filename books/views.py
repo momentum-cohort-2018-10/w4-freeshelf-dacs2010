@@ -20,9 +20,9 @@ def category_detail(request, slug):
     '''
     category pages
     '''
-    categorys = Category.objects.all()
-    books = Book.objects.all()
+    category = Category.objects.get(slug=slug)
+    books = Book.objects.filter(category=category)
     return render(request, 'categorys/category_detail.html', {
         'books': books,
-        'categorys': categorys,
+        'category': category,
     })
